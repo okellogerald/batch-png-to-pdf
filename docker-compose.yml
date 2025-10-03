@@ -1,0 +1,12 @@
+services:
+  png_to_pdf:
+    build: .
+    container_name: png_to_pdf_merger
+    environment:
+      INPUT_DIR: /app/input
+      OUTPUT_DIR: /app/output
+      OUTPUT_FILENAME: merged_custom.pdf
+    volumes:
+      - ./my_images:/app/input
+      - ./my_pdf:/app/output
+    restart: "no"
